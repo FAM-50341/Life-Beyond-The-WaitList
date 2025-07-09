@@ -2,6 +2,7 @@
 Organ transplantation is a life-saving procedure for patients with terminal organ failure. However, with increasing demand and a limited supply of organs, there's a critical need for fair, accurate, and efficient eligibility assessment. This project introduces an AI-powered system designed to support clinicians in making data-driven decisions regarding transplant suitability.
 
 📌 Abstract
+
 This project proposes a predictive system for organ transplant eligibility using a synthetic dataset containing 1,345,297 records with 11 clinical, demographic, and immunological features. The model uses a stacked ensemble of:
 1. XGBoost
 2. LightGBM
