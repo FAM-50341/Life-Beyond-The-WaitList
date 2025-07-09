@@ -20,7 +20,7 @@ This solution supports real-time, high-precision predictions, enhancing clinical
 
 ⚙️ Methodology
 
-![Methodology]("C:\Users\user\Downloads\Workflow(Method).png")
+<img src="C:\Users\user\Downloads\Workflow(Method).png" alt="Workflow of the proposed methodology" width="800"/>
 
 🔍 Motivation
 
