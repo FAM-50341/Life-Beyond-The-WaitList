@@ -1,4 +1,5 @@
 🧠 AI-Powered Organ Transplant Eligibility Prediction
+
 Organ transplantation is a life-saving procedure for patients with terminal organ failure. However, with increasing demand and a limited supply of organs, there's a critical need for fair, accurate, and efficient eligibility assessment. This project introduces an AI-powered system designed to support clinicians in making data-driven decisions regarding transplant suitability.
 
 📌 Abstract
