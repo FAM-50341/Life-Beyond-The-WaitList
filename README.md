@@ -20,20 +20,9 @@ This solution supports real-time, high-precision predictions, enhancing clinical
 
 ⚙️ Methodology
 
-graph TD
-    A[Synthetic Data] --> B[Dataset (134527, 11)]
-    B --> C[Preprocessing]
-    C --> D[Preprocessed Dataset]
-    D --> E[Model Training]
-    E --> F1[Random Forest]
-    E --> F2[Decision Tree]
-    E --> F3[XGBoost]
-    E --> F4[LightGBM]
-    F1 --> G[Ensemble Model]
-    F2 --> G
-    F3 --> G
-    F4 --> G
-    G --> H[AI Model Evaluation]
+Synthetic Data --> Dataset (134527, 11) --> Preprocessing --> Preprocessed Dataset --> Model Training --> Random Forest + Decision Tree + XGBoost + LightGBM --> Ensemble Model --> AI Model Evaluation
+
+Synthetic Data is processed into a Dataset (134527, 11), preprocessed, and transformed into a Preprocessed Dataset. It then undergoes Model Training with Random Forest, Decision Tree, XGBoost, and LightGBM. These models feed into an Ensemble Model, which is finally evaluated for AI Model performance.
 
 🔍 Motivation
 
