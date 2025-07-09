@@ -4,8 +4,7 @@ numpy
 pandas
 xgboost
 lightgbm
-matplotlib
-seaborn
 imbalanced-learn
 dask
-jolib
+matplotlib
+seaborn
