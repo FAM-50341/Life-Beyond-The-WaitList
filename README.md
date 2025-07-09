@@ -12,15 +12,18 @@ with Logistic Regression as the meta-classifier.
 This solution supports real-time, high-precision predictions, enhancing clinical decision-making processes.
 
 🎯 Objectives
+
 -Develop a robust machine learning model to assess transplant eligibility.
 -Identify influential factors affecting transplant decisions.
 -Evaluate the model using metrics like accuracy, precision, recall, and F1-score.
 -Ensure interpretability for use in clinical environments (e.g., hospital transplant committees).
 
 ⚙️ Methodology
-![Methodology](https://drive.google.com/file/d/1EfAyF572D9hNADq6v4vTASEH8KTsuQQH/view?usp=sharing)
+
+![Methodology]("C:\Users\user\Downloads\Workflow(Method).png")
 
 🔍 Motivation
+
 Traditional transplant eligibility assessments often involve subjective decisions and manual scoring systems, leading to inconsistencies across institutions.
 To address this, our AI system:
 -Leverages large-scale historical data.
@@ -45,6 +48,7 @@ To address this, our AI system:
 💡 Captured complex non-linear interactions in eligibility decisions.
 
 🚧 Limitations & Future Work
+
 -Imbalanced classes: Lower macro F1 due to underrepresented categories.
 - Synthetic data: Requires validation on real clinical datasets.
 - Interpretability challenges: Ensemble models can be complex for clinicians.
@@ -52,11 +56,12 @@ To address this, our AI system:
 - Bias risk: Synthetic data may not fully eliminate latent biases.
 
 📚 References
+
 T. Singh et al., Machine Learning Models for Liver Transplant Eligibility, Journal of Medical Informatics, 2021.
 L. Zhao et al., AI in Kidney Transplant Prediction, Computers in Biology and Medicine, 2020.
 J. Martinez et al., Deep Learning in Organ Allocation, IEEE JBHI, 2019.
 D. Kim, Ethical Concerns in AI Transplant Systems, AI and Ethics, 2022.
 A. Rahman et al., Comparative Study of ML for Organ Transplant, HIMS 2023.
 
-                                                                       ❤️ Life Beyond the Waitlist
-                                                                    All rights reserved by Farzana Akter Mily
+                                                          ❤️ Life Beyond the Waitlist
+                                                   All rights reserved by Farzana Akter Mily
