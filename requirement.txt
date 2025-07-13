@@ -1,6 +1,5 @@
 streamlit
-scikit-learn==1.3.2
-numpy
+scikit-learn==1.6.1
 pandas
 xgboost
 lightgbm
