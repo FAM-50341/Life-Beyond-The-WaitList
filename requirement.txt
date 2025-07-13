@@ -1,9 +1,3 @@
+joblib
 streamlit
 scikit-learn==1.6.1
-pandas
-xgboost
-lightgbm
-imbalanced-learn
-dask
-matplotlib
-seaborn

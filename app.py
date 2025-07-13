@@ -1,12 +1,12 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-import pickle
+import joblib
 
 # Load the trained model
 try:
     with open("transplant_model.pkl", "rb") as f:
-        model = pickle.load(f)
+        model = joblib.load(f)
 except Exception as e:
     st.error(f"❌ Failed to load the model: {e}")
     st.stop()
@@ -34,29 +34,40 @@ def label_encode(value, choices):
 
 # Prediction
 if st.button("Predict"):
-    encoded_input = {
+    raw_input = {
         "Gender_Patient": 0 if gender_patient == "Male" else 1,
         "Gender_Donor": 0 if gender_donor == "Male" else 1,
         "Age_Difference": abs(age_patient - age_donor),
-        "Organ": label_encode(organ, ["Kidney", "Liver", "Heart", "Lung"]),
-        "HLA Match": label_encode(hla_match, ["Low", "Moderate", "High"]),
-        "Location": label_encode(location, ["Same City", "Same Country", "International"]),
-        "Donor Blood Group": label_encode(donor_blood_group, ["A", "B", "AB", "O"]),
-        "Patient Blood Group": label_encode(patient_blood_group, ["A", "B", "AB", "O"]),
+        "Organ": organ,
+        "HLA Match": hla_match,
+        "Location": location,
+        "Donor Blood Group": donor_blood_group,
+        "Patient Blood Group": patient_blood_group,
     }
 
-    input_df = pd.DataFrame([encoded_input])
+    input_df = pd.DataFrame([raw_input])
 
+    # 🔥 One-hot encode categorical columns (must match training code)
+    categorical_cols = ["Organ", "HLA Match", "Location", "Donor Blood Group", "Patient Blood Group"]
+    input_df = pd.get_dummies(input_df, columns=categorical_cols)
+
+    # 🧠 Align with training model's expected features
+    missing_cols = set(model.feature_names_in_) - set(input_df.columns)
+    for col in missing_cols:
+        input_df[col] = 0
+    input_df = input_df[model.feature_names_in_]
+
+    # ✅ Predict
     try:
         prediction = model.predict(input_df)[0]
         probability = model.predict_proba(input_df)[0][1]
+        print(prediction, probability)
     except Exception as e:
         st.error(f"❌ Prediction failed: {e}")
         st.stop()
 
+    # 🎉 Show result
     if prediction == 1:
         st.success(f"✅ Eligible for transplant! (Confidence: {probability:.2f})")
     else:
         st.error(f"❌ Not eligible for transplant. (Confidence: {probability:.2f})")
-
-
