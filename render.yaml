@@ -1,9 +1,13 @@
 services:
   - type: web
+    plan: free
+    region: singapore
     name: life-beyond-the-waitlist
-    env: python
+    runtime: python
     repo: https://github.com/FAM-50341/Life-Beyond-The-WaitList
     branch: main
-    buildCommand: pip install -r requirements.txt
-    startCommand: streamlit run app.py --server.port=$PORT --server.enableCORS=false
-    plan: free
+    buildCommand: pip install -r requirement.txt
+    startCommand: streamlit run app.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.13"
